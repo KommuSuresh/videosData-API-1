@@ -11,7 +11,7 @@ const searchByTitle = (videos, title) => {
 };
 
 // Endpoint to get all videos or search by title (case-insensitive)
-app.get("/videos/all", (req, res) => {
+app.get("/videos", (req, res) => {
   const title = req.query.search;
   if (!title) {
     // If no search query is provided, send back all videos
