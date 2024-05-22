@@ -35,7 +35,7 @@ app.get("/videos/id/:id", (req, res) => {
 });
 
 // Endpoint to search videos by title (case-insensitive)
-app.get("/videos/search/:title", (req, res) => {
+app.get("/videos/title/:title", (req, res) => {
   const title = req.params.title;
   const filteredVideos = searchByTitle(videos.videos, title);
   res.json(filteredVideos);
