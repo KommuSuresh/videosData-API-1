@@ -24,7 +24,7 @@ app.get("/videos/all", (req, res) => {
 });
 
 // Endpoint to get video by ID
-app.get("/videos/:id", (req, res) => {
+app.get("/videos/id/:id", (req, res) => {
   const id = req.params.id;
   const video = videos.videos.find((video) => video.id === id);
   if (video) {
