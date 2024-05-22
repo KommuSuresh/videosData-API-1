@@ -23,16 +23,6 @@ app.get("/videos/all", (req, res) => {
   }
 });
 
-// Endpoint to get video by ID
-app.get("/videos/:id", (req, res) => {
-  const id = req.params.id;
-  const video = videos.videos.find((video) => video.id === id);
-  if (video) {
-    res.json(video);
-  } else {
-    res.status(404).send("Video not found");
-  }
-});
 
 // Endpoint to search videos by title (case-insensitive)
 app.get("/videos/search/:title", (req, res) => {
@@ -44,5 +34,20 @@ app.get("/videos/search/:title", (req, res) => {
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
+
+
+
+// Endpoint to get video by ID
+app.get("/videos/:id", (req, res) => {
+  const id = req.params.id;
+  const video = videos.videos.find((video) => video.id === id);
+  if (video) {
+    res.json(video);
+  } else {
+    res.status(404).send("Video not found");
+  }
+});
+
+
 
 module.exports = app;
